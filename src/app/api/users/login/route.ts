@@ -1,8 +1,8 @@
-import {connect} from "@/dbConfig/dbConfig"
+import {connect} from "@/dbConfig/dbConfig";
 import User from "@/models/userModel";
-import { NextRequest,NextResponse } from "next/server";
-import bcryptjs from 'bcryptjs';
-import jwt from 'jsonwebtoken'
+import { NextRequest, NextResponse } from "next/server";
+import bcryptjs from "bcryptjs";
+import jwt from "jsonwebtoken";
 
 connect();
 
@@ -36,7 +36,7 @@ export async function POST(request:NextRequest) {
         //!set token into users cookies
 
         const response = NextResponse.json({
-            message:"Login succesfull",
+            message:"Login successful",
             success:true,
         })
         response.cookies.set("token",token,{httpOnly:true})
