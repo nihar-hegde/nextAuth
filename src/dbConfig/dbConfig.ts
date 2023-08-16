@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const connect = async() => { 
+export const connect = async() => { 
     try {
         mongoose.connect(process.env.MONGODB_URI!);
         const connection = mongoose.connection;
@@ -16,3 +16,4 @@ const connect = async() => {
         console.log("Error while connecting to the DB: ",error)
     }
  }
+
